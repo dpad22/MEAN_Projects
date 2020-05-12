@@ -10,9 +10,9 @@
 <div class="container">
     <h1>Here are the awesome quotes!</h1>
 
-    <% for (var user in data) { %>
-        <h3 id="quote"> "<%= user.quote %>"</h3>
-        <h4 id="timestamp"> "<%= user.name %>" at <%= user[x].created_at %></h4>
+    <% for (var user in quotes) { %>
+        <h3 id="quote"> "<%= quotes[user].quote %>"</h3>
+        <h4 id="timestamp"> "<%= quotes[user].name %>" at <%= quotes[user].created_at %></h4>
         <hr>
     <% } %>
 

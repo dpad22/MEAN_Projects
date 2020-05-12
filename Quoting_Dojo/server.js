@@ -52,19 +52,21 @@ app.post('/process',(req,res)=>{
         .catch(err => {
             console.log("Error saving user:", err)
         })
+        console.log(req.body)
     res.redirect('/quotes')
 })
 
 app.get("/quotes",(req, res)=>{
-    User.find({})
-        .then(data=>{
-            res.json(data)
-        })
-        .catch(err =>{
-            res.json(err)
-        })
-    res.render('quotes.ejs')
-})
+    User.find({}, (err,quotes)=>{
+        var context = {
+            quotes: quotes,
+        };
+        if (err){
+            console.log("Error");
+        }
+            res.render('quotes.ejs',context)
+        });
+});
 
 
 app.listen(1337, () => console.log("listening on port 1337. Elites only"));
