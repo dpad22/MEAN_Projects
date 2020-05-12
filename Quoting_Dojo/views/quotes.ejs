@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <style>
+            img{
+                width:40%;
+            }
+        </style>
+    </head>
+<body>
+<div class="container">
+    <h1>Here are the awesome quotes!</h1>
+
+    <% for (var user in data) { %>
+        <h3 id="quote"> "<%= user.quote %>"</h3>
+        <h4 id="timestamp"> "<%= user.name %>" at <%= user[x].created_at %></h4>
+        <hr>
+    <% } %>
+
+
+    
+</div>
+
+</body>
+</html>
